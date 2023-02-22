@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width="600" height="400"></canvas>
+    <script>
+
+        function desenhaQuadrado(x, y, bgColor="green", borderColor='white') {
+            
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            pincel.fillStyle =bgColor;
+            pincel.fillRect(x, y, 50, 50);
+            // pincel.fillStroke = 'white';
+            pincel.strokeStyle = borderColor;
+            pincel.strokeRect(x,y,50,50);
+        }
+           
+        var x = 0
+        while(x < 600) {
+
+            desenhaQuadrado(x, 0);
+            if (x > 200) {
+                desenhaQuadrado(x,0,'yellow');
+            } if (x > 400) {
+                desenhaQuadrado(x,0,'red');
+            }
+            x = x + 50
+        };
+    </script>
+</body>
+</html>
